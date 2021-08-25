@@ -1,5 +1,6 @@
 require("@nomiclabs/hardhat-waffle");
 require("@openzeppelin/hardhat-upgrades");
+require("dotenv").config();
 
 // This is a sample Hardhat task. To learn how to create your own go to
 // https://hardhat.org/guides/create-task.html
@@ -17,8 +18,6 @@ task("accounts", "Prints the list of accounts", async () => {
 /**
  * @type import('hardhat/config').HardhatUserConfig
  */
-const mnemonic =
-  "canvas pepper wheel ride lake clever board job float sheriff dial warrior";
 
 module.exports = {
   networks: {
@@ -29,7 +28,7 @@ module.exports = {
       url: "https://data-seed-prebsc-2-s2.binance.org:8545",
       chainId: 97,
       gasPrice: 20000000000,
-      accounts: { mnemonic: mnemonic },
+      accounts: { mnemonic: process.env.MNEMONIC },
     },
   },
   solidity: {

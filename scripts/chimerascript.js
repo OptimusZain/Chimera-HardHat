@@ -8,7 +8,7 @@ async function main() {
   // Chimera
   const Chimera = await hre.ethers.getContractFactory("Chimera");
   let chimera;
-  chimera = await upgrades.deployProxy(Chimera, ["Khzr", "KH"], {
+  chimera = await upgrades.deployProxy(Chimera, ["Chimera", "CH"], {
     initializer: "InitializeChimera",
   });
   await chimera.deployed();
@@ -110,14 +110,14 @@ async function main() {
       return;
     }
   });
-  await chimeramarket.deployed();
-  const marketAddrDummy = chimeramarket.address;
-  fs.appendFile("address.txt", marketAddrDummy, (err) => {
-    if (err) {
-      console.log(err);
-      return;
-    }
-  });
+  // await chimeramarket.deployed();
+  // const marketAddrDummy = chimeramarket.address;
+  // fs.appendFile("address.txt", marketAddrDummy, (err) => {
+  //   if (err) {
+  //     console.log(err);
+  //     return;
+  //   }
+  // });
 
   //Calling All initial Functions
 

@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "@openzeppelin/contracts-upgradeable": "^3.4.1",
+    "dotenv": "^10.0.0",
     "truffle": "^5.3.8"
   }
 }
